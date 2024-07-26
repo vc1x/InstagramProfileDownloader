@@ -2,11 +2,11 @@
 // ==UserScript==
 // @name InstagramProfileDownloader
 // @namespace https://github.com/azzlover
-// @author azzlover
+// @author vc1x
 // @description Downloads Instagram profiles
-// @version 1.0.1
-// @updateURL https://github.com/backwards221/InstagramProfileDownloader/raw/main/dist/build.user.js
-// @downloadURL https://github.com/backwards221/InstagramProfileDownloader/raw/main/dist/build.user.js
+// @version 1.0.2
+// @updateURL https://github.com/vc1x/InstagramProfileDownloader/raw/main/dist/build.user.js
+// @downloadURL https://github.com/vc1x/InstagramProfileDownloader/raw/main/dist/build.user.js
 // @icon https://www.google.com/s2/favicons?sz=64&domain=instagram.com
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
 // @match https://instagram.com/*
@@ -17,6 +17,7 @@
 // @connect self
 // @connect instagram.com
 // @connect cdninstagram.com
+// @connect fbcdn.net
 // @connect githubusercontent.com
 // @run-at document-start
 // @grant GM_xmlhttpRequest

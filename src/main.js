@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const headerSelector =
-    'div[id^="mount_"] > div > div > div > div > div > div > div > div > div > div > section > main > div > header > section > div';
+    'div[id^="mount_"] > div > div > div > div > div > div > div > div > div > section > main > div > header > section:nth-child(2) > div > div';
 
   let header = document.querySelector(headerSelector);
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  const after = document.querySelector(`${headerSelector} > div > div > div`);
+  const after = document.querySelector(`${headerSelector} > div:nth-child(2) > div > div`);
 
   const btnClass =
     'x1i10hfl xjqpnuy xa49m3k xqeqjp1 x2hbi6w x972fbf xcfux6l x1qhh985 xm0m39n xdl72j9 x2lah0s xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x2lwn1j xeuugli xexx8yu x18d9i69 x1hl2dhg xggy1nq x1ja2u2z x1t137rt x1q0g3np x1lku1pv x1a2a7pz x6s0dn4 xjyslct x1lq5wgf xgqcy7u x30kzoy x9jhf4c x1ejq31n xd10rxx x1sy0etr x17r0tee x9f619 x1ypdohk x78zum5 x1i0vuye x1f6kntn xwhw2v2 x10w6t97 xl56j7k x17ydfre x1swvt13 x1pi30zi x1n2onr6 x2b8uid xlyipyv x87ps6o x14atkfc xcdnw81 x1gjpkn9 x5n08af xsz8vos';
@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         if (props.more_available === true && props.next_max_id) {
+          // Wait for 1.5 seconds before resolving the next set of media.
+          // If your account gets banned, try increasing the value to 5 seconds.
           await h.delayedResolve(1500);
           const { source } = await h.http.get(`${apiBaseUrl}/${profileId}/?count=100&max_id=${props.next_max_id}`, {}, headers);
           resolved.push(...(await collect(source)));
